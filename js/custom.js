@@ -7,7 +7,8 @@
 	
 	$(window).on('load', function() { 
 		$('.preloader').fadeOut(); 
-		$('#preloader').delay(2000).fadeOut('slow'); 
+		$('#preloader').delay(400).fadeOut('slow'); 
+		$('#preloader').delay(400).fadeOut('slow'); 
 		$('body').delay(450).css({'overflow':'visible'});
 	});
     	
