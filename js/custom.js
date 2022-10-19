@@ -1,32 +1,28 @@
-(function($) {
-    "use strict";
-	
+(function ($) {
+	"use strict";
 	/* ..............................................
 	Loader 
-    ................................................. */
-	
-	$(window).on('load', function() { 
-		$('.preloader').fadeOut(); 
-		$('#preloader').delay(400).fadeOut('slow'); 
-		$('#preloader').delay(400).fadeOut('slow'); 
-		$('body').delay(450).css({'overflow':'visible'});
+	................................................. */
+
+	$(window).on('load', function () {
+		$('body').delay(450).css({ 'overflow': 'visible' });
 	});
-    	
+
 	/* ..............................................
-    Navbar Bar
-    ................................................. */
-	
-	$('.navbar-nav .nav-link').on('click', function() {
+	Navbar Bar
+	................................................. */
+
+	$('.navbar-nav .nav-link').on('click', function () {
 		var toggle = $('.navbar-toggler').is(':visible');
 		if (toggle) {
 			$('.navbar-collapse').collapse('hide');
 		}
 	});
-	
+
 	/* ..............................................
-    Fixed Menu
-    ................................................. */
-    
+	Fixed Menu
+	................................................. */
+
 	$(window).on('scroll', function () {
 		if ($(window).scrollTop() > 50) {
 			$('.top-header').addClass('fixed-menu');
@@ -36,8 +32,8 @@
 	});
 
 	/* ..............................................
-    Properties Filter
-    ................................................. */
+	Properties Filter
+	................................................. */
 	var Container = $('.container');
 	Container.imagesLoaded(function () {
 		var portfolio = $('.properties-menu');
@@ -55,10 +51,10 @@
 	});
 
 	/* ..............................................
-    Gallery
-    ................................................. */
-	
-	$(document).ready(function() {
+	Gallery
+	................................................. */
+
+	$(document).ready(function () {
 		$('.popup-gallery').magnificPopup({
 			delegate: 'a',
 			type: 'image',
@@ -67,21 +63,21 @@
 			gallery: {
 				enabled: true,
 				navigateByImgClick: true,
-				preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+				preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
 			},
 			image: {
 				tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-				titleSrc: function(item) {
+				titleSrc: function (item) {
 					return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
 				}
 			}
 		});
 	});
-	
+
 	/* ..............................................
-    Scroll To Top
-    ................................................. */
-	
+	Scroll To Top
+	................................................. */
+
 	$(document).ready(function () {
 
 		$(window).scroll(function () {
@@ -100,62 +96,86 @@
 		});
 
 	});
-	
-	
+
+
 	/* ..............................................
-    Smooth Scroll
-    ................................................. */
-	
-	$('a[href*="#"]:not([href="#"])').on('click', function() {
-		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') || location.hostname == this.hostname) {
-		  var target = $(this.hash);
-			  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-			  if (target.length) {
+	Smooth Scroll
+	................................................. */
+
+	$('a[href*="#"]:not([href="#"])').on('click', function () {
+		if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+			var target = $(this.hash);
+			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+			if (target.length) {
 				$('html,body').animate({
-				  scrollTop: target.offset().top - 65,
-				  }, 1000);
-				  return false;
-			  }
+					scrollTop: target.offset().top - 65,
+				}, 1000);
+				return false;
+			}
 		}
 	});
 
 	/* ..............................................
-    Counter
-    ................................................. */
+	Counter
+	................................................. */
 
-    
 
-(function () {
-  const sec = 1000,
-        min = sec * 60,
-        hr = min * 60,
-        d = hr * 24;
 
-let christmas = "Oct 24, 2022 00:00:00",
-      countDown = new Date(christmas).getTime(),
-      x = setInterval(function() {    
+	(function () {
+		const sec = 1000,
+			min = sec * 60,
+			hr = min * 60,
+			d = hr * 24;
 
-let now = new Date().getTime(),
-            distance = countDown - now;
+		let christmas = "Oct 24, 2022 00:00:00",
+			countDown = new Date(christmas).getTime(),
+			x = setInterval(function () {
 
-        document.getElementById("d").innerText = Math.floor(distance / (d)),
-          document.getElementById("hr").innerText = Math.floor((distance % (d)) / (hr)),
-          document.getElementById("min").innerText = Math.floor((distance % (hr)) / (min)),
-          document.getElementById("sec").innerText = Math.floor((distance % (min)) / sec);
+				let now = new Date().getTime(),
+					distance = countDown - now;
 
-if (distance < 0) {
-let christmasTime = document.getElementById("christmasTime"),
-countdown = document.getElementById("countdown"),
-fest = document.getElementById("fest");
+				document.getElementById("d").innerText = Math.floor(distance / (d)),
+					document.getElementById("hr").innerText = Math.floor((distance % (d)) / (hr)),
+					document.getElementById("min").innerText = Math.floor((distance % (hr)) / (min)),
+					document.getElementById("sec").innerText = Math.floor((distance % (min)) / sec);
 
-          christmasTime.innerText = "Happy Christmas!";
-          countdown.style.display = "none";
-          fest.style.display = "block";
+				if (distance < 0) {
+					let christmasTime = document.getElementById("christmasTime"),
+						countdown = document.getElementById("countdown"),
+						fest = document.getElementById("fest");
 
-          clearInterval(x);
-        }
-      }, 0)
-  }());
+					christmasTime.innerText = "Happy Christmas!";
+					countdown.style.display = "none";
+					fest.style.display = "block";
 
-	
+					clearInterval(x);
+				}
+			}, 0)
+	}());
+
+
+	$('#fire2').delay(450).css({ 'display': 'none' });
+	$('#fire3').delay(450).css({ 'display': 'none' });
+
+
+
+
 }(jQuery));
+
+function display2() {
+	$('#fire1').delay(450).css({ 'display': 'none' });
+	$('#fire2').delay(450).css({ 'display': 'block' });
+
+}
+
+function display3() {
+	$('#fire2').delay(450).css({ 'display': 'none' });
+	$('#fire3').delay(450).css({ 'display': 'block' })
+
+	setTimeout(() => {
+		$('#preloader')
+		$('#preloader').css({ 'display': 'none' });
+		$('body').css({ 'overflow': 'visible' });
+	}, 5300)
+
+}
