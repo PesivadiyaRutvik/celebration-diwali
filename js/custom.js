@@ -171,7 +171,7 @@ function display1() {
 function display3() {
 	$('#fire1').remove();
 	$('#fire2').remove();
-	$('#fire3').css({ 'display': 'block' })
+	$('#fire3').css({ 'display': 'block' });
 
 	setTimeout(() => {
 		$('#preloader').css({ 'background': '#ffffff' });
@@ -179,7 +179,9 @@ function display3() {
 	setTimeout(() => {
 		$('#preloader').css({ 'display': 'none' });
 		$('body').css({ 'overflow': 'visible' });
-		// $('#jetho').play();
+		$('#jetho').innerHTML(`<audio autoplay>
+            <source src="./video/jetho.mp3" type="audio/mpeg">
+         </audio>`);
 	}, 5300)
 
 }
