@@ -1330,13 +1330,14 @@ select.form-control:not([size]):not([multiple]){
 }
 
 .footer-box {
-    background: #05323b;
+    background: #ffd030;
+    color: #521407;
     padding: 20px 0;
 }
 
 .footer-box .footer-company-name {
     text-align: center;
-    color: #fff;
+    color: #521407;
     font-size: 15px;
     font-weight: 400;
     margin: 0;
@@ -1596,7 +1597,6 @@ h1#diwali_time {
 }
 
 .diwali_caunter {
-    margin-top: 40px;
 }
 
 .diwali_caunter h2 {
