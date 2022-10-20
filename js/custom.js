@@ -157,19 +157,20 @@
 	$('#fire2').delay(450).css({ 'display': 'none' });
 	$('#fire3').delay(450).css({ 'display': 'none' });
 
-
-
-
 }(jQuery));
 
 function display2() {
 	$('#fire1').css({ 'display': 'none' });
 	$('#fire2').css({ 'display': 'block' });
-
+}
+function display1() {
+	$('#fire1').css({ 'display': 'block' });
+	$('#fire2').css({ 'display': 'none' });
 }
 
 function display3() {
-	$('#fire2').css({ 'display': 'none' });
+	$('#fire1').remove();
+	$('#fire2').remove();
 	$('#fire3').css({ 'display': 'block' })
 
 	setTimeout(() => {
@@ -178,6 +179,7 @@ function display3() {
 	setTimeout(() => {
 		$('#preloader').css({ 'display': 'none' });
 		$('body').css({ 'overflow': 'visible' });
+		// $('#jetho').play();
 	}, 5300)
 
 }
