@@ -1,15 +1,17 @@
+var currentIndex = 0;
+
 (function ($) {
     "use strict";
-    $().timelinr({
+    $(document).ready(function () { 
+        $().timelinr({
         orientation: 'vertical',
         issuesSpeed: 300,
         datesSpeed: 100,
         arrowKeys: 'true',
         startAt: 1
     })
+});
 }(jQuery));
-
-let currentIndex = 0;
 
 function pausePreviosVideo() {
     const v1 = document.getElementById("video1");
