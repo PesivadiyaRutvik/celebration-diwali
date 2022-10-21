@@ -11,22 +11,22 @@
 <body class="body">
 <div id="timeline">
   <ul id="dates">
-    <li><a href="#0" class="selected">Early</a></li>
-    <li><a href="#1">9:00 am</a></li>
-    <li><a href="#2">10:00 am</a></li>
-    <li><a href="#3">11:00 am</a></li>
-    <li><a href="#4">12:00 pm</a></li>
-    <li><a href="#8">04:00 pm</a></li>
-    <li><a href="#5">07:00 pm</a></li>
-    <li><a href="#6">09:00 pm</a></li>
-    <li><a href="#7">00:00 am</a></li>
+    <li><a href="#0" class="selected" onclick="this.currentIndex = 0;pausePreviosVideo()">Early</a></li>
+    <li><a href="#1" onclick="this.currentIndex = 1;pausePreviosVideo()">9:00 am</a></li>
+    <li><a href="#2" onclick="this.currentIndex = 2;pausePreviosVideo()">10:00 am</a></li>
+    <li><a href="#3" onclick="this.currentIndex = 3;pausePreviosVideo();playVideo('video1')">11:00 am</a></li>
+    <li><a href="#4" onclick="this.currentIndex = 4;pausePreviosVideo();playVideo('video2')">02:00 pm</a></li>
+    <li><a href="#8" onclick="this.currentIndex = 5;pausePreviosVideo();">04:00 pm</a></li>
+    <li><a href="#6" onclick="this.currentIndex = 6;pausePreviosVideo();">07:00 pm</a></li>
+    <li><a href="#5" onclick="this.currentIndex = 7;pausePreviosVideo();">09:00 pm</a></li>
+    <li><a href="#7" onclick="this.currentIndex = 8;pausePreviosVideo();">00:00 am</a></li>
   </ul>
   <ul id="issues">
-    <li id="0" class="selected center">
+    <li id="0" class="selected center" >
       <img src="https://im.indiatimes.in/content/2022/Oct/diwali-safai-memes_63469c61c40d6.jfif?w=1200&h=900&cc=1" style="width: 200px; height: 200px" />
       <h3 style="margin-top: 10px;">Day Before Diwali</h3>
     </li>
-    <li id="1" class="center">
+    <li id="1" class="center" >
       <img src="https://pbs.twimg.com/media/E8hNwKoVEAM9x8Z.jpg" style="width: 200px; height: 200px" />
       <h3 style="margin-top: 10px;">9:00 am</h3>
       
@@ -36,29 +36,30 @@
       <h3 style="margin-top: 10px;">10:00 am</h3>
       
     </li>
-    <li id="3" class="center">
-      <video src="./video/tmkocfunny-are-nahane-ja-nahane_zkRgPvud.mp4" id="video2" controls style="width: 200px; height: 200px"></video>
+    <li id="3" class="center" onclick="this.currentIndex = 3;pausePreviosVideo();playVideo('video1')">
+      <video src="./video/tmkocfunny-are-nahane-ja-nahane_zkRgPvud.mp4" id="video1" controls style="width: 200px; height: 200px"></video>
       <h3 style="margin-top: 10px;">11:00 am</h3>
     </li>
 
-    <li id="4" class="center">
+    <li id="4" class="center" onclick="this.currentIndex = 4;pausePreviosVideo();playVideo('video2')">
       <video src="./video/jethalal-happy-diwali-song_9E1161IC.mp4" id="video2" controls style="width: 200px; height: 200px"></video>
-      <h3 style="margin-top: 10px;">12:00 pm</h3>
+      <h3 style="margin-top: 10px;">02:00 pm</h3>
     </li>
 
-       <li id="8" class="center">
+    <li id="6" class="center" onclick="this.currentIndex = 5;pausePreviosVideo()">
       <img src="https://media0.giphy.com/media/iNgip7EWyX2S4evVog/giphy.gif?cid=790b7611d3573a93506ccfd5aec461be3384a978e54ca133&rid=giphy.gif&ct=g" style="width: 200px; height: 200px" />
       <h3 style="margin-top: 10px;">04:00 pm</h3>
     </li>
-    <li id="5" class="center">
-      <img src="https://pbs.twimg.com/media/B1HQ32hCQAEJWlT.jpg:large" style="width: 200px; height: 200px" />
+   
+    <li id="8" class="center" onclick="this.currentIndex = 6;pausePreviosVideo()">
+      <img src="https://prasadkhabar.com/wp-content/uploads/2020/11/tmkoc-diwali-celebration-5.jpg" style="width: 200px; height: 200px" />
       <h3 style="margin-top: 10px;">07:00 pm</h3>
     </li>
-    <li id="6" class="center">
-      <img src="https://prasadkhabar.com/wp-content/uploads/2020/11/tmkoc-diwali-celebration-5.jpg" style="width: 200px; height: 200px" />
+     <li id="5" class="center" onclick="this.currentIndex = 7;pausePreviosVideo()">
+      <img src="https://pbs.twimg.com/media/B1HQ32hCQAEJWlT.jpg:large" style="width: 200px; height: 200px" />
       <h3 style="margin-top: 10px;">09:00 pm</h3>
     </li>
-    <li id="7" class="center">
+    <li id="7" class="center" onclick="this.currentIndex = 8;pausePreviosVideo()">
       <img src="https://media.tenor.com/wYifH7m334cAAAAC/arrey-band-kar-jethalal-champaklal-gada.gif" style="width: 200px; height: 200px" />
       <h3 style="margin-top: 10px;">00:00 am</h3>
     </li>
@@ -66,8 +67,8 @@
 
   <div id="grad_top"></div>
 		<div id="grad_bottom"></div>
-		<a href="#" id="next" onclick="$('#video2').pause()">+</a>
-		<a href="#" id="prev" onclick="$('#video2').pause()">-</a>
+		<a href="#" id="next" onclick="this.currentIndex--;pausePreviosVideo();">+</a>
+		<a href="#" id="prev" onclick="this.currentIndex++;pausePreviosVideo();">-</a>
 </div>
 
    <script src="js/jquery.min.js"></script>
