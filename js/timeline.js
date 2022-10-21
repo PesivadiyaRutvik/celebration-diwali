@@ -23,7 +23,6 @@ function pausePreviosVideo() {
         v2.currentTime = 0;
         v2.play();
     }
-
 }
 
 
