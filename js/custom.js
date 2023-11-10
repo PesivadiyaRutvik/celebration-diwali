@@ -127,7 +127,7 @@
 			hr = min * 60,
 			d = hr * 24;
 
-		let christmas = "Oct 24, 2022 00:00:00",
+		let christmas = "Nov 12, 2023 00:00:00",
 			countDown = new Date(christmas).getTime(),
 			x = setInterval(function () {
 
